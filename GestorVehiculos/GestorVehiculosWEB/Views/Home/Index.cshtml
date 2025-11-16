@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Gestor de Vehículos";
+}
+
+<div class="home-hero-green">
+    <h1>Gestor de Vehículos</h1>
+    <p class="lead">
+        Sistema MVC + API REST para administración de vehículos.
+    </p>
+    <p>
+        @Html.ActionLink(
+            "Ver listado de vehículos",
+            "Index",
+            "VehiculosWeb",
+            null,
+            new { @class = "btn btn-green-light btn-lg hero-btn" }
+        )
+    </p>
+</div>
+
+<div class="row home-panels">
+
+    <!-- Panel: Listar vehículos -->
+    <div class="col-md-4">
+        <div class="panel panel-green panel-flat">
+            <div class="panel-heading text-center">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-th-list"></span>
+                    &nbsp; Listar Vehículos
+                </h3>
+            </div>
+            <div class="panel-body text-center">
+                <p>Ver todos los vehículos registrados en el sistema.</p>
+                @Html.ActionLink(
+                    "Ir al listado",
+                    "Index",
+                    "VehiculosWeb",
+                    null,
+                    new { @class = "btn btn-green btn-block" }
+                )
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel: Registrar -->
+    <div class="col-md-4">
+        <div class="panel panel-green-light panel-flat">
+            <div class="panel-heading text-center">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    &nbsp; Registrar Vehículo
+                </h3>
+            </div>
+            <div class="panel-body text-center">
+                <p>Agregar un nuevo vehículo al catálogo.</p>
+                <button class="btn btn-green btn-block" disabled>Próximamente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel: API -->
+    <div class="col-md-4">
+        <div class="panel panel-green-dark panel-flat">
+            <div class="panel-heading text-center">
+                <h3 class="panel-title">
+                    <span class="glyphicon glyphicon-cloud-upload"></span>
+                    &nbsp; API REST
+                </h3>
+            </div>
+            <div class="panel-body text-center">
+                <p>Acceder a los endpoints públicos de la API REST.</p>
+                <a href="/api/vehiculos" class="btn btn-green-dark btn-block">Ver endpoints</a>
+            </div>
+        </div>
+    </div>
+
+</div>

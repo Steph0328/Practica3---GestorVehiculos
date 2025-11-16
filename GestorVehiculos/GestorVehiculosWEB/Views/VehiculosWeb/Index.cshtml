@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GestorVehiculosDAL.Models.Vehiculo>
+
+@{
+    ViewBag.Title = "Listado de Vehículos";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Precio</th>
+            <th>Color</th>
+            <th>Placa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td>@v.Id</td>
+                <td>@v.Marca</td>
+                <td>@v.Modelo</td>
+                <td>@v.Anio</td>
+                <td>@v.Precio</td>
+                <td>@v.Color</td>
+                <td>@v.Placa</td>
+                <td>
+                    @Html.ActionLink("Ver detalle", "Detalle", "VehiculosWeb", new { id = v.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

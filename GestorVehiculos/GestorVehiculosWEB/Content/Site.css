@@ -1,0 +1,158 @@
+﻿/* =========================================
+   BASE DEL TEMPLATE MVC
+========================================= */
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 70px; /* espacio bajo el navbar */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* =========================================
+   NAVBAR VERDE
+========================================= */
+
+.navbar-inverse {
+    background-color: #14532d; /* verde oscuro sobrio */
+    border-color: #14532d;
+}
+
+    .navbar-inverse .navbar-brand,
+    .navbar-inverse .navbar-nav > li > a {
+        color: #e5f3ea; /* verde muy claro */
+    }
+
+        .navbar-inverse .navbar-brand:hover,
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #ffffff;
+        }
+
+/* =========================================
+   HOME / HERO
+========================================= */
+
+.home-hero-green {
+    background-color: #f9fafb; /* casi blanco */
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 40px 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+    .home-hero-green h1 {
+        font-size: 34px;
+        font-weight: 700;
+        color: #14532d; /* verde oscuro en el título */
+    }
+
+    .home-hero-green .lead {
+        font-size: 16px;
+        color: #6b7280; /* gris suave */
+        margin-bottom: 20px;
+    }
+
+/* Botón principal del hero */
+.btn-green-light {
+    background-color: #22c55e; /* verde acento */
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+    .btn-green-light:hover {
+        background-color: #16a34a;
+    }
+
+/* =========================================
+   PANELS HOME
+========================================= */
+
+.home-panels {
+    margin-bottom: 40px;
+}
+
+/* Card blanca con sombra suave */
+.panel-flat {
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+/* Encabezados de los tres panels:
+   fondo blanco y solo una línea verde abajo */
+.panel-green > .panel-heading,
+.panel-green-light > .panel-heading,
+.panel-green-dark > .panel-heading {
+    background-color: #ffffff;
+    border-bottom: 3px solid #22c55e;
+    color: #14532d;
+}
+
+.panel-heading .panel-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Texto dentro de los panels */
+.panel-body {
+    padding: 18px 20px 20px;
+}
+
+    .panel-body p {
+        color: #4b5563;
+        margin-bottom: 14px;
+    }
+
+/* =========================================
+   BOTONES VERDES
+========================================= */
+
+.btn-green {
+    background-color: #22c55e;
+    border-color: #16a34a;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+    .btn-green:hover {
+        background-color: #16a34a;
+        border-color: #15803d;
+        color: #ffffff;
+    }
+
+.btn-green-dark {
+    background-color: #14532d;
+    border-color: #14532d;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+    .btn-green-dark:hover {
+        background-color: #0f3e22;
+        border-color: #0f3e22;
+    }
+
+/* Botones de ancho completo dentro de panels */
+.btn-block {
+    width: 100%;
+}
