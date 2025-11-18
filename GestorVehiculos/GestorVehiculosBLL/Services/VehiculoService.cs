@@ -46,5 +46,21 @@ namespace GestorVehiculosBLL.Services
 
             return _vehiculoRepository.Editar(vehiculo);
         }
+
+        // AGREGAR VEHÍCULO
+        public bool Agregar(Vehiculo vehiculo)
+        {
+            // Validación básica
+            if (vehiculo == null) return false;
+
+            // Validaciones adicionales opcionales:
+            if (string.IsNullOrWhiteSpace(vehiculo.Marca)) return false;
+            if (string.IsNullOrWhiteSpace(vehiculo.Modelo)) return false;
+            if (vehiculo.Anio <= 0) return false;
+
+            return _vehiculoRepository.Agregar(vehiculo);
+        }
+
+
     }
 }

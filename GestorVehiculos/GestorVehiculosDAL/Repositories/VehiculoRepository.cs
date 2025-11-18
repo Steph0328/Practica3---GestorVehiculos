@@ -47,5 +47,18 @@ namespace GestorVehiculosDAL.Repositories
 
             return true;
         }
+
+        // Agregar Vehículo
+        public bool Agregar(Vehiculo nuevoVehiculo)
+        {
+            if (nuevoVehiculo == null) return false;
+
+            // Generar el próximo ID
+            int nuevoId = _vehiculos.Any() ? _vehiculos.Max(v => v.Id) + 1 : 1;
+            nuevoVehiculo.Id = nuevoId;
+
+            _vehiculos.Add(nuevoVehiculo);
+            return true;
+        }
     }
 }

@@ -108,6 +108,38 @@ namespace GestorVehiculosWEB.Controllers
             return RedirectToAction("Index");
         }
 
+        //  AGREGAR VEHÍCULO (GET)
+        
+        public ActionResult Agregar()
+        {
+            // Devuelve un formulario vacío
+            return View();
+        }
+
+        
+        //  AGREGAR VEHÍCULO (POST)
+       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Agregar(Vehiculo vehiculo)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Devuelve la vista con errores de validación
+                return View(vehiculo);
+            }
+
+            var agregado = _service.Agregar(vehiculo);
+            if (!agregado)
+            {
+                ModelState.AddModelError("", "No se pudo agregar el vehículo.");
+                return View(vehiculo);
+            }
+
+            // Redirige a la lista de vehículos tras agregar
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

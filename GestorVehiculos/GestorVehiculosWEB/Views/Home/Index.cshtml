@@ -53,10 +53,17 @@
             </div>
             <div class="panel-body text-center">
                 <p>Agregar un nuevo vehículo al catálogo.</p>
-                <button class="btn btn-green btn-block" disabled>Próximamente</button>
+                @Html.ActionLink(
+                    "Agregar Vehículo",           // Texto del botón
+                    "Agregar",                   // Acción del controlador
+                    "VehiculosWeb",              // Controlador
+                    null,                        // Parámetros
+                    new { @class = "btn btn-green btn-block" } // Atributos HTML
+                )
             </div>
         </div>
     </div>
+
 
     <!-- Panel: API -->
     <div class="col-md-4">

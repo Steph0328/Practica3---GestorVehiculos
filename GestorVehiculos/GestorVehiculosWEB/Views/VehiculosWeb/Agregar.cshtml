@@ -1,0 +1,78 @@
+﻿
+@model GestorVehiculosDAL.Models.Vehiculo
+
+@{
+    ViewBag.Title = "Agregar Vehículo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h4>Ingrese los datos del nuevo vehículo</h4>
+<hr />
+
+@using (Html.BeginForm("Agregar", "VehiculosWeb", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Marca, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Marca, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Marca)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Modelo, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Modelo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Modelo)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Anio, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Anio, new { @class = "form-control", type = "number" })
+                @Html.ValidationMessageFor(m => m.Anio)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Precio, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Precio, new { @class = "form-control", type = "number", step = "0.01" })
+                @Html.ValidationMessageFor(m => m.Precio)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Color, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Color, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Color)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Placa, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Placa, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Placa)
+            </div>
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default", style = "margin-left:6px" })
+            </div>
+        </div>
+
+    </div>
+}
+

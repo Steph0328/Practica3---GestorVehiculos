@@ -207,6 +207,7 @@
     <Content Include="Views\VehiculosWeb\Detalle.cshtml" />
     <Content Include="Views\VehiculosWeb\Eliminar.cshtml" />
     <Content Include="Views\VehiculosWeb\Editar.cshtml" />
+    <Content Include="Views\VehiculosWeb\Agregar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

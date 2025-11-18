@@ -10,5 +10,7 @@ namespace GestorVehiculosDAL.Repositories
         bool Eliminar(int id);
 
         bool Editar(Vehiculo vehiculoActualizado);
+
+        bool Agregar(Vehiculo nuevoVehiculo);
     }
 }

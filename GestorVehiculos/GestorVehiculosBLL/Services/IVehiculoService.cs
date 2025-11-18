@@ -10,5 +10,7 @@ namespace GestorVehiculosBLL.Services
         bool Eliminar(int id);
 
         bool Editar(Vehiculo vehiculo);
+
+        bool Agregar(Vehiculo vehiculo);
     }
 }

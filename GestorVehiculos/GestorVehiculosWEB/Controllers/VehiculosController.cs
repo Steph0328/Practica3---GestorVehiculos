@@ -73,6 +73,28 @@ namespace GestorVehiculosWEB.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        // POST: api/vehiculos
+        [HttpPost]
+        [Route("")]
+        public IHttpActionResult Agregar(Vehiculo vehiculo)
+        {
+            // Validación básica del modelo recibido
+            if (vehiculo == null)
+                return BadRequest("Debe enviar un vehículo válido.");
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            // Llamada al servicio
+            var agregado = _service.Agregar(vehiculo);
+
+            if (!agregado)
+                return Content(HttpStatusCode.InternalServerError, "No se pudo agregar el vehículo.");
+
+            // Devuelve 201 Created con el nuevo recurso
+            return Created($"api/vehiculos/{vehiculo.Id}", vehiculo);
+        }
+
 
     }
 }
