@@ -71,5 +71,43 @@ namespace GestorVehiculosWEB.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        //  **EDITAR VEHÍCULO (GET)**
+        public ActionResult Editar(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var vehiculo = _service.ObtenerPorId(id.Value);
+            if (vehiculo == null)
+                return HttpNotFound();
+
+            return View(vehiculo);
+        }
+
+       
+        //  **EDITAR VEHÍCULO (POST)**
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Editar(Vehiculo vehiculo)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Vuelve a mostrar el formulario con errores
+                return View(vehiculo);
+            }
+
+            var actualizado = _service.Editar(vehiculo);
+            if (!actualizado)
+            {
+                ModelState.AddModelError("", "No se pudo actualizar el vehículo.");
+                return View(vehiculo);
+            }
+
+            // Redirige a la lista tras actualizar
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

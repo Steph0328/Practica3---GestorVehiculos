@@ -8,5 +8,7 @@ namespace GestorVehiculosBLL.Services
         IEnumerable<Vehiculo> ObtenerTodos();
         Vehiculo ObtenerPorId(int id);
         bool Eliminar(int id);
+
+        bool Editar(Vehiculo vehiculo);
     }
 }

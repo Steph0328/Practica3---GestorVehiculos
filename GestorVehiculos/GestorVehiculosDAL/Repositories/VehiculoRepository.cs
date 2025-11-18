@@ -31,5 +31,21 @@ namespace GestorVehiculosDAL.Repositories
             _vehiculos.Remove(v);
             return true;
         }
+
+        // ✔ NUEVO: Editar / Actualizar Vehículo
+        public bool Editar(Vehiculo vehiculoActualizado)
+        {
+            var existente = _vehiculos.FirstOrDefault(v => v.Id == vehiculoActualizado.Id);
+            if (existente == null) return false;
+
+            existente.Marca = vehiculoActualizado.Marca;
+            existente.Modelo = vehiculoActualizado.Modelo;
+            existente.Anio = vehiculoActualizado.Anio;
+            existente.Precio = vehiculoActualizado.Precio;
+            existente.Color = vehiculoActualizado.Color;
+            existente.Placa = vehiculoActualizado.Placa;
+
+            return true;
+        }
     }
 }

@@ -60,5 +60,19 @@ namespace GestorVehiculosWEB.Controllers
             // Devuelve 204 No Content para indicar éxito sin payload
             return StatusCode(HttpStatusCode.NoContent);
         }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public IHttpActionResult Editar(Vehiculo vehiculo)
+        {
+            var respuesta = _service.Editar(vehiculo);
+            if (vehiculo == null)
+                return NotFound();
+
+            // Devuelve 204 No Content para indicar éxito sin payload
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+
     }
 }
