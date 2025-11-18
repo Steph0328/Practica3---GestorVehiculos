@@ -36,21 +36,21 @@ namespace GestorVehiculosBLL.Services
 
         public bool Editar(Vehiculo vehiculo)
         {
-            // Validaciones básicas antes de actualizar
+            // Validaciones básicas antes de actualizar****////
             if (vehiculo == null) return false;
             if (vehiculo.Id <= 0) return false;
 
-            // Validar que exista antes de editar
+            // Validar que exista antes de editar****///
             var existente = _vehiculoRepository.ObtenerPorId(vehiculo.Id);
             if (existente == null) return false;
 
             return _vehiculoRepository.Editar(vehiculo);
         }
 
-        // AGREGAR VEHÍCULO
+        //*** AGREGAR VEHÍCULO****//
         public bool Agregar(Vehiculo vehiculo)
         {
-            // Validación básica
+            // Validación básica**////
             if (vehiculo == null) return false;
 
             // Validaciones adicionales opcionales:
