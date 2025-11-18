@@ -66,13 +66,19 @@
 
         <br />
 
+        <!-- Ajuste visual realizado para validación técnica Parte 3 -->
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default", style = "margin-left:6px" })
+                <button type="submit" class="btn" style="background-color:#28a745; color:white; border:none;">
+                    Guardar
+                </button>
+                @Html.ActionLink("Cancelar", "Index", null, new
+                {
+                    @class = "btn",
+                    style = "background-color:#dc3545; color:white; border:none; margin-left:6px;"
+                })
             </div>
         </div>
 
     </div>
 }
-
