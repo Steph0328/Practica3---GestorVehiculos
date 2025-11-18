@@ -2,6 +2,7 @@
 using GestorVehiculosDAL.Models;
 using GestorVehiculosDAL.Repositories;
 using System.Collections.Generic;
+using System.Net;
 using System.Web.Http;
 
 namespace GestorVehiculosWEB.Controllers
@@ -40,6 +41,24 @@ namespace GestorVehiculosWEB.Controllers
                 return NotFound();
 
             return Ok(vehiculo);
+        }
+
+        // ➤ 3. Eliminar un vehículo
+        // DELETE: api/vehiculos/{id}
+        [HttpDelete]
+        [Route("{id:int}")]
+        public IHttpActionResult DeleteVehiculo(int id)
+        {
+            var vehiculo = _service.ObtenerPorId(id);
+            if (vehiculo == null)
+                return NotFound();
+
+            var eliminado = _service.Eliminar(id);
+            if (!eliminado)
+                return Content(HttpStatusCode.InternalServerError, "No se pudo eliminar el vehículo.");
+
+            // Devuelve 204 No Content para indicar éxito sin payload
+            return StatusCode(HttpStatusCode.NoContent);
         }
     }
 }

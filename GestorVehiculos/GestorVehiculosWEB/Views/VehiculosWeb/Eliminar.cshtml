@@ -1,0 +1,40 @@
+@model GestorVehiculosDAL.Models.Vehiculo
+
+@{
+    ViewBag.Title = "Eliminar Vehículo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h4>¿Está seguro que desea eliminar este vehículo?</h4>
+<hr />
+<dl class="dl-horizontal">
+    <dt>Id</dt>
+    <dd>@Model.Id</dd>
+
+    <dt>Marca</dt>
+    <dd>@Model.Marca</dd>
+
+    <dt>Modelo</dt>
+    <dd>@Model.Modelo</dd>
+
+    <dt>Año</dt>
+    <dd>@Model.Anio</dd>
+
+    <dt>Precio</dt>
+    <dd>@Model.Precio</dd>
+
+    <dt>Color</dt>
+    <dd>@Model.Color</dd>
+
+    <dt>Placa</dt>
+    <dd>@Model.Placa</dd>
+</dl>
+
+@using (Html.BeginForm("Eliminar", "VehiculosWeb", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default", style = "margin-left:6px" })
+}

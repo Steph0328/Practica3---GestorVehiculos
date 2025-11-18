@@ -7,5 +7,6 @@ namespace GestorVehiculosDAL.Repositories
     {
         IEnumerable<Vehiculo> ObtenerTodos();
         Vehiculo ObtenerPorId(int id);
+        bool Eliminar(int id);
     }
 }

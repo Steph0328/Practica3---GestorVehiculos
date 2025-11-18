@@ -23,5 +23,13 @@ namespace GestorVehiculosDAL.Repositories
         {
             return _vehiculos.FirstOrDefault(v => v.Id == id);
         }
+
+        public bool Eliminar(int id)
+        {
+            var v = _vehiculos.FirstOrDefault(x => x.Id == id);
+            if (v == null) return false;
+            _vehiculos.Remove(v);
+            return true;
+        }
     }
 }

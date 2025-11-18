@@ -31,7 +31,8 @@
                 <td>@v.Color</td>
                 <td>@v.Placa</td>
                 <td>
-                    @Html.ActionLink("Ver detalle", "Detalle", "VehiculosWeb", new { id = v.Id }, null)
+                    @Html.ActionLink("Ver detalle", "Detalle", "VehiculosWeb", new { id = v.Id }, new { @class = "btn btn-default btn-xs" })
+                    @Html.ActionLink("Eliminar", "Eliminar", "VehiculosWeb", new { id = v.Id }, new { @class = "btn btn-danger btn-xs", style = "margin-left:6px" })
                 </td>
             </tr>
         }

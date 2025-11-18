@@ -15,7 +15,6 @@ namespace GestorVehiculosBLL.Services
 
         public IEnumerable<Vehiculo> ObtenerTodos()
         {
-           
             return _vehiculoRepository.ObtenerTodos();
         }
 
@@ -27,6 +26,12 @@ namespace GestorVehiculosBLL.Services
             }
 
             return _vehiculoRepository.ObtenerPorId(id);
+        }
+
+        public bool Eliminar(int id)
+        {
+            if (id <= 0) return false;
+            return _vehiculoRepository.Eliminar(id);
         }
     }
 }
